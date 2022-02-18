@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('--------------!!!fixação 1!!!--------------')
+
+        let impar = [];
+        let count = 1;
+        while (count <= 50) {
+            if ( count % 2!=0) {
+                impar.push(count);
+            } 
+            count++;
+        }
+
+        console.log(impar);
+
+        console.log('--------------!!!fixação 2!!!--------------')
+
+
+        let indice = parseInt(prompt(' Infomer o numero entre 1 e 10 que deseja ver a tabuada.'))
+        let multi = 1;
+        for (indice; multi <= 10; multi++) {
+            if (indice <= 10) {
+            console.log(indice + " X " + multi + " = " + (indice*multi));
+            } else {
+                console.log('Insira um numero entre 1 e 10!')
+                indice = parseInt(prompt(' Infomer um numero válido entre 1 e 10 que deseja ver a tabuada.'));
+                multi--;
+                continue;
+            }
+        }
+        
+        console.log('--------------!!!fixação 3!!!--------------')
+        
+        
+        let lista_criada = [];
+
+        let escolha = prompt('Deseja criar uma lista nova ou usar uma estatica ? ( Nova / Estatica )');
+        
+        while (escolha === null || escolha.toUpperCase() != 'NOVA' && escolha.toUpperCase() != 'ESTATICA') {
+            escolha = prompt('Opção invalida, tente novamente. ( Nova / Estatica )');
+        }
+
+        if (escolha.toLowerCase() == 'nova') {
+            let criar = parseInt(prompt("Digite um numero que deseja adicionar a lista, caso deseja encerrar digite break."))
+            while (true) {
+                if (isNaN(criar)) {
+                    console.log(lista_criada);
+                    console.log(Math.min(...lista_criada));
+                    console.log(Math.max(...lista_criada));
+                    break;
+                }
+                lista_criada.push(criar);
+                criar = parseInt(prompt("Digite outro numero, caso deseja encerrar digite break."));
+            }
+        } else {
+            let estatico = [5, 10, 20, 2, 14, 1, 152, 2, 3, 14];
+            console.log(estatico);
+            console.log(' O menor numero da lista é: ' + Math.min(...estatico));
+            console.log(' O maior numero da lista é: ' + Math.max(...estatico));
+        } 
+
+      
+    </script>
+</body>
+</html>
